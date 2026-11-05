@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
+import OpeningExperience from './components/OpeningExperience';
 import AudioButton       from './components/AudioButton';
 import TopVideo          from './components/TopVideo';
 import Hero              from './components/Hero';
@@ -16,7 +17,53 @@ const MAPS_LINK = 'https://maps.app.goo.gl/soSMSbcXSrPFrJks5';
 
 export default function App() {
   const [playing, setPlaying] = useState(false);
+  const [showBtn, setShowBtn] = useState(false);
   const videoRef = useRef(null);
+
+  // When user taps the envelope:
+  // Starts the video automatically with sound (using user click gesture)
+  const handleOpenStart = useCallback(() => {
+    // 1. Force viewport to top
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // 2. Play video with sound immediately
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.volume = 1;
+      videoRef.current.muted = false;
+
+      const p = videoRef.current.play();
+      if (p && p.then) {
+        p.then(() => {
+          setPlaying(true);
+        }).catch(() => {
+          // Fallback if browser requires muted start, then unmute
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().then(() => {
+              setPlaying(true);
+              videoRef.current.muted = false;
+            }).catch(() => {});
+          }
+        });
+      }
+    }
+  }, []);
+
+  // When curtains have finished opening:
+  const handleOpenComplete = useCallback(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    // Ensure video is playing
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current.play().then(() => setPlaying(true)).catch(() => {});
+    }
+
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      setShowBtn(true);
+    }, 200);
+  }, []);
 
   // Floating button toggles video play/pause
   function togglePlayback() {
@@ -32,10 +79,21 @@ export default function App() {
 
   return (
     <>
+      {/* 
+        Sequential Opening Experience:
+        1. Envelope appears with wax seal & "Tap to open"
+        2. On tap -> Real velvet theater curtains sweep open
+        3. Video starts playing automatically on top with sound!
+      */}
+      <OpeningExperience
+        onOpen={handleOpenStart}
+        onComplete={handleOpenComplete}
+      />
+
       {/* Floating Play/Pause Button (Burgundy circle) */}
       <AudioButton
         playing={playing}
-        visible={true}
+        visible={showBtn}
         onToggle={togglePlayback}
       />
 
