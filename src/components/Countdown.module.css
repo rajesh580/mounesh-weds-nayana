@@ -1,0 +1,54 @@
+.countdown {
+  background: #3A2A1A;
+  color: #F9F3E8;
+  padding: 80px 24px;
+  text-align: center;
+}
+.label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(200,160,100,0.65);
+  margin-bottom: 20px;
+}
+.heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #EDD9A3;
+  margin-bottom: 48px;
+}
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(12px, 4vw, 40px);
+  flex-wrap: wrap;
+}
+.unit { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.num {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  font-weight: 400;
+  color: #EDD9A3;
+  line-height: 1;
+  min-width: 2ch;
+  letter-spacing: 0.04em;
+}
+.sep {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  color: rgba(200,160,100,0.3);
+  align-self: flex-start;
+  margin-top: 4px;
+  line-height: 1.1;
+}
+.unitLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(200,160,100,0.5);
+}

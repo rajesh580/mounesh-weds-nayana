@@ -1,0 +1,149 @@
+.gallery {
+  padding: 80px 20px;
+  background: #F9F3E8;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(140, 100, 60, 0.65);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: #3A2A1A;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 44px;
+}
+
+/* ── Mosaic Grid ── */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Featured Landscape Photo */
+.featuredCard {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(100, 65, 20, 0.08);
+  border: 1px solid rgba(196, 144, 74, 0.25);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.featuredCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(100, 65, 20, 0.15);
+}
+
+.featuredImg {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* 2-Column Portrait Pair */
+.pairRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.portraitCard {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(100, 65, 20, 0.08);
+  border: 1px solid rgba(196, 144, 74, 0.25);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #1a0f08;
+}
+
+.portraitCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(100, 65, 20, 0.15);
+}
+
+/* 
+  CRITICAL: 2/3 Aspect Ratio matches the natural 853x1280 dimension of couple1, couple3, couple5.
+  This ensures ZERO cut off of sparklers ("I <3 U") or the couple!
+*/
+.portraitImg {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(15, 8, 5, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+  animation: lbFade 0.25s ease;
+}
+
+@keyframes lbFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightboxImg {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(220, 170, 80, 0.4);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

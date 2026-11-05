@@ -1,0 +1,134 @@
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  background: #F9F3E8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,130,70,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bgCircle:nth-child(1) { width: 500px; height: 500px; top: -120px; left: -150px; }
+.bgCircle:nth-child(2) { width: 400px; height: 400px; bottom: -100px; right: -100px; }
+
+.eyebrow {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(140,100,60,0.75);
+  margin-bottom: 24px;
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: rgba(160,110,50,0.5);
+  font-size: 18px;
+}
+.ornament::before, .ornament::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(160,110,50,0.4);
+}
+.coupleName {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(2.2rem, 8vw, 4.2rem);
+  font-weight: 500;
+  color: #3A2A1A;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+.ampersand {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.4rem, 5vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(160,110,50,0.75);
+  letter-spacing: 0.08em;
+  margin: 8px 0;
+}
+.subname {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(0.95rem, 3vw, 1.3rem);
+  font-weight: 400;
+  color: rgba(100,60,20,0.6);
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+}
+.divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(160,110,50,0.4), transparent);
+  margin: 28px auto;
+}
+.dateBlock { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.date {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  font-weight: 500;
+  color: #3A2A1A;
+  letter-spacing: 0.12em;
+}
+.timePlace {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(100,65,25,0.7);
+  letter-spacing: 0.06em;
+}
+.welcome {
+  max-width: 440px;
+  margin: 36px auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2.8vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(80,50,20,0.75);
+  letter-spacing: 0.03em;
+}
+.scrollHint {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInUp 1s 1.5s both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.scrollLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(140,100,60,0.5);
+}
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(160,110,50,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}

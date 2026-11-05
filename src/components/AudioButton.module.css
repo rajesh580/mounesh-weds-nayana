@@ -1,0 +1,46 @@
+.btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 50px;
+  height: 50px;
+  background: #7A3B1E;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9000;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(237, 217, 163, 0.4);
+  transition: opacity 0.4s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  background: #8F4522;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #FFF2D1;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    bottom: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+  }
+  .btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
