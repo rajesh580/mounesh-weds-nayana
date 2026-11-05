@@ -1,8 +1,8 @@
 import s from './Venue.module.css';
 
-export default function Venue({ mapsLink = 'https://maps.app.goo.gl/soSMSbcXSrPFrJks5' }) {
+export default function Venue({ mapsLink = 'https://maps.app.goo.gl/ZMc5EdcTQ67TXEww7' }) {
   // Google Maps embed centered on the exact location in Chitapur
-  const embedUrl = 'https://maps.google.com/maps?q=16.1802007,76.3412969&hl=en&z=15&output=embed';
+  const embedUrl = 'https://maps.google.com/maps?q=16.178260,76.340721&hl=en&z=16&output=embed';
 
   return (
     <section className={s.venue} id="venue">

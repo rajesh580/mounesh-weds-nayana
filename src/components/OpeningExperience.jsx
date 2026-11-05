@@ -58,11 +58,12 @@ export default function OpeningExperience({ onOpen, onComplete }) {
             <div className={s.waxSeal}>
               <span className={s.waxSealHeart}>♥</span>
             </div>
+            <div className={s.envSubtitle}>Wedding Invitation</div>
             <div className={s.coupleNameOnEnv}>Mounesh &amp; Nayana</div>
           </div>
 
           <div className={s.tapWrap}>
-            <span className={s.tapLabel}>Tap to open</span>
+            <span className={s.tapLabel}>Click to open</span>
             <div className={s.tapChevron} />
           </div>
         </div>

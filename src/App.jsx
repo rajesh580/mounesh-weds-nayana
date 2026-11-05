@@ -13,7 +13,7 @@ import Closing           from './components/Closing';
 import './index.css';
 
 // Google Maps link provided
-const MAPS_LINK = 'https://maps.app.goo.gl/soSMSbcXSrPFrJks5';
+const MAPS_LINK = 'https://maps.app.goo.gl/ZMc5EdcTQ67TXEww7';
 
 export default function App() {
   const [playing, setPlaying] = useState(false);

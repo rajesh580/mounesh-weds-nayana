@@ -105,13 +105,24 @@
   line-height: 1;
 }
 
+.envSubtitle {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 8.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(140, 100, 60, 0.7);
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+
 .coupleNameOnEnv {
   font-family: 'Cinzel', Georgia, serif;
   font-size: 11.5px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: rgba(100, 65, 25, 0.85);
-  margin-top: 14px;
+  margin-top: 4px;
   position: relative;
   z-index: 2;
   font-weight: 500;
