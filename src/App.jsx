@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from 'react';
 
 import OpeningExperience from './components/OpeningExperience';
 import AudioButton       from './components/AudioButton';
+import Navbar            from './components/Navbar';
 import TopVideo          from './components/TopVideo';
 import Hero              from './components/Hero';
 import Countdown         from './components/Countdown';
@@ -104,6 +105,9 @@ export default function App() {
           background: '#F9F3E8',
         }}
       >
+        {/* Navigation Bar with Wedding Favicon Logo */}
+        <Navbar />
+
         {/* 1. TOP VIDEO: Plays automatically on top with sound */}
         <TopVideo
           videoRef={videoRef}

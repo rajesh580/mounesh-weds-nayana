@@ -28,7 +28,7 @@ export default function Schedule() {
   }, []);
 
   return (
-    <section className={s.schedule}>
+    <section className={s.schedule} id="events">
       <div className={s.inner}>
         <p className={s.eyebrow}>November 16, 2026</p>
         <h2 className={s.title}>Schedule of Events</h2>

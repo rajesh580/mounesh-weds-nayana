@@ -29,7 +29,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section className={s.gallery} ref={ref}>
+    <section className={s.gallery} id="gallery" ref={ref}>
       <div className={s.inner}>
         <p className={s.eyebrow}>Our Moments</p>
         <h2 className={s.title}>Two Hearts, One Journey</h2>

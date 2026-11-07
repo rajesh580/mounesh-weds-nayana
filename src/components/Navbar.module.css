@@ -1,0 +1,142 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(196, 144, 74, 0.28);
+  box-shadow: 0 4px 20px rgba(100, 65, 20, 0.05);
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.faviconLogo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(74, 21, 33, 0.25);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.brand:hover .faviconLogo {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.names {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3A2A1A;
+  line-height: 1.2;
+}
+
+.date {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(140, 100, 60, 0.8);
+  font-style: italic;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(80, 50, 20, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.link:hover {
+  color: #9E6E28;
+}
+
+.venueBtn {
+  font-family: 'Cinzel', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: #3A2A1A;
+  color: #EDD9A3;
+  padding: 6px 14px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.venueBtn:hover {
+  background: #C4904A;
+  color: #3A2A1A;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 8px 14px;
+  }
+  .faviconLogo {
+    width: 30px;
+    height: 30px;
+  }
+  .names {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .date {
+    display: none;
+  }
+  .links {
+    gap: 12px;
+  }
+  .link {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+  .venueBtn {
+    padding: 5px 10px;
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 420px) {
+  .link {
+    display: none;
+  }
+}

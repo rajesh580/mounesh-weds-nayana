@@ -2,7 +2,7 @@ import s from './TopVideo.module.css';
 
 export default function TopVideo({ videoRef, onPlay, onPause }) {
   return (
-    <section className={s.topVideoSection}>
+    <section className={s.topVideoSection} id="video">
       <div className={s.inner}>
         <p className={s.eyebrow}>Our Story in Motion</p>
         <h2 className={s.title}>Mounesh &amp; Nayana</h2>
